@@ -1,0 +1,111 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: menu path
+  steps:
+  - intent: menu
+  - action: utter_menu
+
+- story: Restaurent path
+  steps:
+  - intent: Restaurent
+  - action: utter_greet
+  - action: utter_greet_1
+  - intent: table
+  - action: utter_table
+  - action: utter_table_1
+  - intent: menue
+  - action: utter_menue_1
+  - action: utter_menue_2
+  - intent: drink
+  - action: utter_drink
+  - intent: order
+  - action: utter_order
+  - intent: starter
+  - action: utter_ready
+  - intent: thank
+  - action: utter_enjoy
+  - intent: enjoy
+  - action: utter_desert_1
+  - intent: desert
+  - action: utter_desert_2
+  - intent: thank
+  - intent: water
+  - action: utter_water
+  - intent: bill
+  - action: utter_bill
+
+- story: Book store path
+  steps:
+  - intent: BookStore
+  - action: utter_greet
+  - intent: greet
+  - intent: book
+  - action: utter_sold
+  - intent: sold
+  - action: utter_sorry
+  - intent: Novel
+  - action: utter_sorry_1
+  - action: utter_check
+  - action: utter_sorry_2
+  - intent: time 
+  - action: utter_time
+  - intent: ship
+  - action: utter_sure
+  - intent: thank
+  - action: utter_nice_day
+
+- story: Travel path
+  steps:
+  - intent: Travel
+  - action: utter_services
+  - intent: book_flight
+  - action: utter_address
+  - action: utter_source
+  - intent: source
+  - action: action_city_state
+  - action: utter_destination
+  - intent: action_city_state
+  - action: utter_details
+
+- story: School path
+  steps:
+  - intent: School
+  - action: utter_noon
+  - intent: take_admission
+  - action: utter_admission
+  - intent: admission_fee
+  - action: utter_fee
+  - intent: school_services
+  - action: utter_facilities
+
+
+  

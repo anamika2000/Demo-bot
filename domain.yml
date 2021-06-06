@@ -1,0 +1,247 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- corona_state:
+    use_entities: true
+- tell_name:
+    use_entities: true
+- menu:
+    use_entities: true
+- table:
+    use_entities: true
+- menue:
+    use_entities: true
+- drink:
+    use_entities: true
+- order:
+    use_entities: true
+- starter:
+    use_entities: true
+- thank:
+    use_entities: true
+- enjoy:
+    use_entities: true
+- desert:
+    use_entities: true
+- water:
+    use_entities: true
+- bill:
+    use_entities: true
+- book_flight:
+    use_entities: true
+- source:
+    use_entities: true
+- destination:
+    use_entities: true
+- take_admission:
+    use_entities: true
+- admission_fee:
+    use_entities: true
+- admission_register:
+    use_entities: true
+- school_services:
+    use_entities: true
+- my_name:
+    use_entities:
+    - name
+- mobile_number:
+    use_entities:
+    - number
+- email_id:
+    use_entities:
+    - email
+- standard:
+    use_entities:
+    - standard
+- Restaurent:
+    use_entities: true
+- sold:
+    use_entities: true
+- time:
+    use_entities: true
+- Travel:
+    use_entities: true
+- book:
+    use_entities: true
+- BookStore:
+    use_entities: true
+- Novel:
+    use_entities: true
+- ship:
+    use_entities: true
+entities:
+- state
+- city
+- name
+- number
+- email
+- standard
+slots:
+  name:
+    type: text
+  number:
+    type: text
+  email:
+    type: text
+  standard:
+    type: text
+responses:
+  utter_greet:
+  - text: Hey! How may i help you?
+  utter_greet_1:
+  - buttons:
+    - payload: /table
+      title: Hii there, i would like a table for two please
+    - payload: /table
+      title: hello, i would like a table for two please
+    text: 'things you can say :'
+  utter_table:
+  - text: |-
+      No problem, please follow me to a seating area! 
+      here is your table
+  utter_table_1:
+  - buttons:
+    - payload: /menue
+      title: great thank you,can i get a menu please
+    - payload: /menue
+      title: thank you, can i get a menu please
+    text: 'things you can say :'
+  utter_menue_1:
+  - text: ' yes ofcourse.please wait one moment.'
+  utter_menue_2:
+  - text: here is your menu. Can i get you anything to drink?
+  utter_drink:
+  - text: ' here are your drinks.are you ready to order?'
+  utter_order:
+  - text: would you like a starter?
+  utter_ready:
+  - text: good afternoon,your food is ready.i hope you enjoy it
+  utter_enjoy:
+  - text: did you enjoy your meal
+  utter_desert_1:
+  - text: would you like anything for dessert?
+  utter_desert_2:
+  - text: here is your dessert
+  utter_water:
+  - text: yes ofcouse. can i bring you anuthing else?
+  utter_bill:
+  - text: of couse,here it is .enjoy the rest of your evening
+  utter_menu:
+  - text: 'our bots :'
+    buttons:
+    - title: 'Restaurent'
+      payload: '/Restaurent'
+    - title: 'Travel'
+      payload: '/Travel'
+  
+    - title: 'School'
+      payload: '/School'
+    - title: 'Book Store'
+      payload: '/BookStore'
+  utter_noon:
+  - text: "Goodafter noon sir, How may i help you"
+  utter_standard:
+  - text: "which class is your son studying"
+  utter_admission:
+  - text: "ok so the admission date is next month. what about just apply so that we can give you the proper slot"
+  utter_fee:
+  - text: " The admission fees is 30,000.but before that the registration fees is just 500"
+  utter_facilities:
+  - text: "Services :\nSports \nScouting \nPerforming Arts \nVisual Arts \nMusic \nAcademic clubs(Math, chess, Debates) \nStudent Media \n Affinity Groups"
+  utter_register:
+  - text: "Plaese provide student details for registration"
+   
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_sold:
+  - text: I'm afraid it's sold out
+  utter_sorry:
+  - text: I'm sorry.you are talking about the science fiction book ,right?
+  utter_sorry_1:
+  - text: oh. I'm sorry,I mixed it up with the science fiction book
+  utter_check:
+  - text: Let me check it real quick.
+  utter_sorry_2:
+  - text: I'm sorry, it's is sold out,too.
+  utter_time:
+  - text: the book will probably be here on Friday
+  utter_sure:
+  - text: sure. I'll need your address and phone
+  utter_nice_day:
+  - text: Have a nice day
+  utter_services:
+  - text: "Hello, welcome to Happy Travel Services \nHow may I help you"
+  utter_address:
+  - text: Please provide the source and the destination
+  utter_source:
+  - text: 'Source :'
+  utter_destination:
+  - text: 'Destination : '
+  utter_details:
+  - text: "Thanks for providing the details"
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_name:
+  - text: My name is Anamika
+  utter_ask_name:
+  - text: "what is student's name"
+  utter_ask_number:
+  - text: "Number :"
+  utter_ask_email:
+  - text: "Email :"
+  utter_ask_standard:
+  - text: "Standard: "
+  utter_details_thanks:
+  - text: |-
+      Thanks for providing the given details 
+      Name: {Name}, 
+      Mobile Number: {Mobile_number}, 
+      Email_Id: {Email} 
+      Standard: {Standard}
+      you have register succesfully, timeslot for admission will be notify soon.
+actions:
+- action_city_state
+- action_submit
+forms:
+  user_details_form:
+    name:
+    - type: from_entity
+      entity: name
+    number:
+    - type: from_entity
+      entity: number
+      
+    email:
+    - type: from_entity
+      entity: email
+      
+    standard:
+    - type: from_entity
+      entity: standard
+
+e2e_actions: []

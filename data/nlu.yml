@@ -1,0 +1,304 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: corona_state
+  examples: |
+    - [india](state)
+    - [corona](state)
+    - [up](state)
+    - [punjab](state)
+    - [assam](state)
+    - [maharastra](state)
+    - [madhya pradesh](state)
+    - [goa](state)
+    - [karnataka](state)
+    - [delhi](state)
+    - [bihar](state)
+    - [west bengal](state)
+
+- intent: tell_name
+  examples: |
+    - What is your name?
+    - tell me your name
+    - what others call you
+    - what should i call you?
+
+- intent: my_name
+  examples: |
+    - My name is [ashish]{"entity":"name","value":"ashish"}
+    - My name is [rahul]{"entity":"name","value":"rahul"}
+    - My name is [anamika]{"entity":"name","value":"anamika"}
+    - [ashish]{"entity":"name","value":"ahish"}
+    - [rahul]{"entity":"name","value":"rahul"}
+    - name is [ashish]{"entity":"name","value":"ahish"}
+    - [ashish]{"entity":"name","value":"ahish"} is my name
+
+- intent: mobile_number
+  examples: |
+    - My number is [1235463478]{"entity":"number"}
+    - [1235463478]{"entity":"number"}
+    - [1235463478]{"entity":"number"} is my number
+
+- intent: email_id
+  examples: |
+    - My email is [ashish978@gmail.com]{"entity":"email"}
+    - [rahulsingh674@gmail.com]{"entity":"email"}
+    - [rahulsingh674@gmail.com]{"entity":"email"} is my mail
+    - My mail is [ashishgupta978@gmail.com]{"entity":"email"}
+    - mail id is [ashishgupta978@gmail.com]{"entity":"email"}
+    - id is [rahulsingh674@gmail.com]{"entity":"email"}
+- intent: standard
+  examples: |
+    - my son is in standard [2nd]{"entity":"standard"}
+    - [2nd]{"entity":"standard"}
+    - my son is in standard [3rd]{"entity":"standard"}
+    - my son is in standard [4th]{"entity":"standard"}
+    - [3rd]{"entity":"standard"}
+    - [4th]{"entity":"standard"}
+    - [5th]{"entity":"standard"}
+    - my son is in standard [5th]{"entity":"standard"}
+    - my son is in standard [1st]{"entity":"standard"}
+
+
+
+
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: menu
+  examples: |
+    - menu
+    - what are the menu
+- intent: table
+  examples: |
+    - hi there i would like a table for two please
+    - table for two please
+- intent: menue
+  examples: |
+    - great thank you.can i get the menu,please?
+    - menu please
+    - can i get a menu
+- intent: drink
+  examples: |
+    - water is fine for me please
+    - I will have a diet coke please
+- intent: order
+  examples: |
+    - yes we are,  i would like the grilled chicken with chips and rice,please
+- intent: starter
+  examples: |
+    - No,thank you.i will just have the main course 
+    - For starter i would like pumpkin soup.for the main course, i would like fried fish with salad,please
+- intent: thank
+  examples: |
+    - thank you very much
+    - thank you
+- intent: enjoy
+  examples: |
+    - yes it was lovely, thank you
+    - yes it was great, thank you
+- intent: desert
+  examples: |
+    - yes,please i would like cheesecake
+    - I would like cake please
+- intent: water
+  examples: |
+    - exccuse me,please can i get a glass of water?
+- intent: bill
+  examples: |
+    - no, thank you, just the bill
+    - bill please
+- intent: book
+  examples: |
+    - do you have the Last Wish?
+    - can i get the Last Wish, please
+- intent: sold
+  examples: |
+    - sold out,Really?
+    - There is no way
+    - sold out, Really? there is no way
+- intent: Novel
+  examples: |
+    - oh no,not at all. I'm talking about the best-selling novel by Andrzej Sapkowski.
+    - I'm talking about the best-selling novel by Andrzej Sapkowski.
+- intent: time
+  examples: |
+    - can you tell me how long it will take you to get me a copy of the book?
+    - how long it will take to get me a book?
+    - when will i get a book?
+- intent: ship
+  examples: |
+    - great , can you ship one to my house?
+    - can you ship one to my house?
+    - can it will deleiver in my house?
+
+- intent: book_flight
+  examples: |
+    - Hello, i would like to book a flight
+    - Hii , i would like to book a flight, please
+- intent: source
+  examples: |
+    - [Mumbai](city)
+    - [Goa](city)
+    - [Hydrabad](city)
+    - [Lucknow]
+    - [Bangalore](city)
+    - [Kolkata](city)
+    - [Chennai](city)
+    - [Bagdogra](city)
+    - [Bhopal](city)
+    - [Bhubaneswar](city)
+    - [Guwahati](city)
+    - [Amritsar](city)
+    - [Hyderabad](city)
+    - [Bengaluru](city)
+    - [Nagpur](city)
+    - [Jaipur](city)
+
+- intent: destination
+  examples: |
+    - [Mumbai](city)
+    - [Goa](city)
+    - [Hydrabad](city)
+    - [Lucknow]
+    - [Bangalore](city)
+    - [Kolkata](city)
+    - [Chennai](city)
+    - [Bagdogra](city)
+    - [Bhopal](city)
+    - [Bhubaneswar](city)
+    - [Guwahati](city)
+    - [Amritsar](city)
+    - [Hyderabad](city)
+    - [Bengaluru](city)
+    - [Nagpur](city)
+    - [Jaipur](city)
+
+- intent: take_admission
+  examples: |
+    - I would like  my son to get his admission
+    - goodafternoon, i would like my son to get his admission
+- intent: admission_fee
+  examples: |
+    - what is the admission fees, may i know
+    - can i know admission fee
+    - admission fee
+- intent: admission_register
+  examples: |
+    - Ok, i want to apply
+    - i want to register
+    - ok, i want to register
+- intent: school_services
+  examples: |
+    - what facilities you provide for the students
+    - what are the facilities here
+    - facilities
+    - what kind of facilities you provide for students
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+  
+  
+
+    
