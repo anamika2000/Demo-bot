@@ -17,20 +17,6 @@ nlu:
     - goodevening
     - good afternoon
 
-- intent: corona_state
-  examples: |
-    - [india](state)
-    - [corona](state)
-    - [up](state)
-    - [punjab](state)
-    - [assam](state)
-    - [maharastra](state)
-    - [madhya pradesh](state)
-    - [goa](state)
-    - [karnataka](state)
-    - [delhi](state)
-    - [bihar](state)
-    - [west bengal](state)
 
 - intent: tell_name
   examples: |

@@ -90,6 +90,8 @@ class ActionCoronaTracker(Action):
             dispatcher.utter_message(template="utter_details_thanks",Name=tracker.get_slot('name'),Mobile_number=tracker.get_slot('number'),Email=tracker.get_slot('email'),Standard=tracker.get_slot('standard'))
             return []
 
+
+
 class ActionCityTracker(Action):
 
     def name(self) -> Text:
@@ -113,18 +115,17 @@ class ActionCityTracker(Action):
             if data['name'] == city.title():
                 city_code = data['code']
 
-                #print(data)
+                print(data)
                 #message = "code: "+ data["code"]
         for x in response_airport:
             if x['city_code'] == city_code:
         
-                #print(x)
+                print(x)
                 message="Airport :" + x['name']
-            else:
-                message = "No Airport at this city"
+                
 
         print(message)
-        #print(msg)
+
         dispatcher.utter_message(message)
-        #dispatcher.utter_message(msg)
+
         return []

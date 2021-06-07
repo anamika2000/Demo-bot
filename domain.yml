@@ -19,8 +19,6 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
-- corona_state:
-    use_entities: true
 - tell_name:
     use_entities: true
 - menu:
@@ -88,7 +86,6 @@ intents:
 - ship:
     use_entities: true
 entities:
-- state
 - city
 - name
 - number

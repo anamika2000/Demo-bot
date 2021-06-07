@@ -93,8 +93,10 @@ stories:
   - intent: source
   - action: action_city_state
   - action: utter_destination
-  - intent: action_city_state
+  - intent: destination
+  - action: action_city_state
   - action: utter_details
+
 
 - story: School path
   steps:
