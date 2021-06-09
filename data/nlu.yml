@@ -17,7 +17,6 @@ nlu:
     - goodevening
     - good afternoon
 
-
 - intent: tell_name
   examples: |
     - What is your name?
@@ -206,48 +205,6 @@ nlu:
     - can you ship one to my house?
     - can it will deleiver in my house?
 
-- intent: book_flight
-  examples: |
-    - Hello, i would like to book a flight
-    - Hii , i would like to book a flight, please
-- intent: source
-  examples: |
-    - [Mumbai](city)
-    - [Goa](city)
-    - [Hydrabad](city)
-    - [Lucknow]
-    - [Bangalore](city)
-    - [Kolkata](city)
-    - [Chennai](city)
-    - [Bagdogra](city)
-    - [Bhopal](city)
-    - [Bhubaneswar](city)
-    - [Guwahati](city)
-    - [Amritsar](city)
-    - [Hyderabad](city)
-    - [Bengaluru](city)
-    - [Nagpur](city)
-    - [Jaipur](city)
-
-- intent: destination
-  examples: |
-    - [Mumbai](city)
-    - [Goa](city)
-    - [Hydrabad](city)
-    - [Lucknow]
-    - [Bangalore](city)
-    - [Kolkata](city)
-    - [Chennai](city)
-    - [Bagdogra](city)
-    - [Bhopal](city)
-    - [Bhubaneswar](city)
-    - [Guwahati](city)
-    - [Amritsar](city)
-    - [Hyderabad](city)
-    - [Bengaluru](city)
-    - [Nagpur](city)
-    - [Jaipur](city)
-
 - intent: take_admission
   examples: |
     - I would like  my son to get his admission
@@ -268,6 +225,97 @@ nlu:
     - what are the facilities here
     - facilities
     - what kind of facilities you provide for students
+
+- intent: main_menu
+  examples: |
+    - let's see
+    - Main menu
+
+- intent: plane_my_trip
+  examples: |
+    - plan my trip
+    - Plane My Trip
+    - PLAN MY TRIP
+- intent: activities_offered
+  examples: |
+    - activities offered
+    - Activities offered
+    - Activities
+    - activities
+- intent: more_info_zipline_tour
+  examples: |
+    - More Information
+    - About Zipline Tour
+    - zipline tour
+
+- intent: more_info_natural_exploration
+  examples: |
+    - More Information
+    - About Natural Exploration
+    - about natural exploration
+- intent: more_info_subwing
+  examples: |
+    - More Information
+    - About subwing
+    - subwing
+
+
+- intent: tour_details_zipline
+  examples: |
+    - Tour details
+    - Tour details zipline tour
+
+
+- intent: tour_details_natural_exploration
+  examples: |
+    - Tour Details
+    - tour details natural exploration
+- intent: tour_details_subwing
+  examples: |
+    - Tour Details
+    - tour details subwing
+
+- intent: add_to_mytrip
+  examples: |
+    - Add to My trip
+    - add to my trip
+
+- intent: contact_us
+  examples: |
+    - Contact Us
+    - contact us
+- intent: testimonials
+  examples: |
+    - Testimonials
+    - testimonials
+    - TESTIMONIALS
+- intent: about_costa_rica
+  examples: |
+    - About Costa Rica
+    - costa rica
+    - about costa rica
+- intent: tips_and_tricks
+  examples: |
+    - Tips And Tricks
+    - tips and tricks
+- intent: tips_1
+  examples: |
+    - Tips1
+    - tips1
+- intent: tips_2
+  examples: |
+    - Tips2
+    - tips2
+- intent: tips_3
+  examples: |
+    - Tips3
+    - tips3
+- intent: other_activities
+  examples: |
+    - Other Activities
+    - other activities
+    - OTHER ACTIVITIES
+
 
 
 

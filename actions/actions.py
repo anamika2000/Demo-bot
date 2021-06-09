@@ -7,11 +7,14 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List,Union, Optional
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet,EventType
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk import Action
+from rasa_sdk.forms import FormAction
+
 import requests
 #
 #
@@ -92,40 +95,47 @@ class ActionCoronaTracker(Action):
 
 
 
-class ActionCityTracker(Action):
+class TripplanForm(FormAction):
+    def name(self):
+        return "trip_plan_form"
 
-    def name(self) -> Text:
-        return "action_city_state"
+    def required_slots(self,tracker) -> List[Text]:
+        return ["travel_date","travel_period","trip_type","adults","child","budget","Email","phno"]
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        return {
+            "travel_date": [
+                self.from_text(),
+            ],
+            "travel_period": [
+                self.from_text(),
+            ],
+            
+            "trip_type": [
+                self.from_text(),
+            ],
+            "adults": [
+                self.from_text(),
+            ],
+            "child": [
+                self.from_text(),
+            ],
+            "budget": [
+                self.from_text(),
+            ],
+            "Email": [
+                self.from_text(),
+            ],
+            "phno": [
+                self.from_text(),
+            ],
+        }
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        response_city = requests.get('http://api.travelpayouts.com/data/en/cities.json').json()
-        response_airport=requests.get('http://api.travelpayouts.com/data/en/airports.json').json()
-        entities = tracker.latest_message['entities']
-        print(entities)
-        city = None
-        for e in entities:
-            if e['entity'] == 'city':
-                city = e['value']
-        message="Please enter correct city name"
-        city_code = None
-        for data in response_city:
-            if data['name'] == city.title():
-                city_code = data['code']
-
-                print(data)
-                #message = "code: "+ data["code"]
-        for x in response_airport:
-            if x['city_code'] == city_code:
-        
-                print(x)
-                message="Airport :" + x['name']
-                
-
-        print(message)
-
-        dispatcher.utter_message(message)
-
+    def submit(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]: 
+    
+        dispatcher.utter_message("Thank you so much for showing your intrest in traveling with us")
         return []

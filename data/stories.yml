@@ -83,21 +83,6 @@ stories:
   - intent: thank
   - action: utter_nice_day
 
-- story: Travel path
-  steps:
-  - intent: Travel
-  - action: utter_services
-  - intent: book_flight
-  - action: utter_address
-  - action: utter_source
-  - intent: source
-  - action: action_city_state
-  - action: utter_destination
-  - intent: destination
-  - action: action_city_state
-  - action: utter_details
-
-
 - story: School path
   steps:
   - intent: School
@@ -108,6 +93,238 @@ stories:
   - action: utter_fee
   - intent: school_services
   - action: utter_facilities
+
+- story: Travel path
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu
+  - action: utter_welcome_message
+  - intent: plan_my_trip
+  - action: utter_plan_trip_one
+  - action: trip_plan_form
+- story: activities
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Zipline_Tour
+  - action: utter_Zipline_Tour
+  - intent: more_info_zipline_tour
+  - action: utter_zipline_tour
+  - intent: other_activities
+  - action: utter_Bioluminescent_Water
+  - action: utter_Go_paragliding
+  - action: utter_Visit_rio_celeste
+
+- story: activities_natural_exploration
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Natural_Exploration
+  - action: utter_Natural_Exploration
+  - intent: more_info_natural_exploration
+  - action: utter_natural_exploration 
+  - intent: other_activities
+  - action: utter_Bioluminescent_Water
+  - action: utter_Go_paragliding
+  - action: utter_Visit_rio_celeste
+
+- story: activities_subwing
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Subwing_Costa_Rica
+  - action: utter_Subwing_Costa_Rica
+  - intent: more_info_subwing
+  - action: utter_subwing
+  - intent: other_activities
+  - action: utter_Bioluminescent_Water
+  - action: utter_Go_paragliding
+  - action: utter_Visit_rio_celeste  
+
+- story: tourdetails_zipline
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Zipline_Tour
+  - action: utter_Zipline_Tour
+  - intent: tour_details_zipline
+  - action: utter_zipline_tour_details
+  - intent: other_activities
+  - action: utter_Bioluminescent_Water
+  - action: utter_Go_paragliding
+  - action: utter_Visit_rio_celeste 
+
+- story: tourdetails_natural
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Natural_Exploration
+  - action: utter_Natural_Exploration
+  - intent: tour_details_natural_exploration
+  - action: utter_natural_tour_details
+  - intent: other_activities
+  - action: utter_Bioluminescent_Water
+  - action: utter_Go_paragliding
+  - action: utter_Visit_rio_celeste  
+
+- story: tourdetails_subwing
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Subwing_Costa_Rica
+  - action: utter_Subwing_Costa_Rica
+  - intent: tour_details_subwing
+  - action: utter_subwing_tour_details 
+  - intent: other_activities
+  - action: utter_Bioluminescent_Water
+  - action: utter_Go_paragliding
+  - action: utter_Visit_rio_celeste
+
+- story: add_trip_1
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Zipline_Tour
+  - action: utter_Zipline_Tour
+  - intent: add_to_mytrip
+  - action: utter_add_trip
+- story: add_trip_2
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Natural_Exploration
+  - action: utter_Natural_Exploration
+  - intent: add_to_mytrip
+  - action: utter_add_trip
+
+- story: add_trip_3
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: activities_offered
+  - action: utter_activities
+  - intent: Subwing_Costa_Rica
+  - action: utter_Subwing_Costa_Rica
+  - intent: add_to_mytrip
+  - action: utter_add_trip
+
+- story: Travel contacts
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: contact_us
+  - action: utter_contact
+
+- story: testimonials
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: testimonials
+  - action: utter_testimonials
+  - action: utter_Daniel
+  - action: utter_Sophie
+
+- story: about_costa_rica
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: about_costa_rica
+  - action: utter_about 
+  - action: utter_about_costa_rica_1
+  - action: utter_about_costa_rica_2
+  - action: utter_about_costa_rica_3
+  - action: utter_costa_rica
+
+- story: tips1
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: tips_and_tricks
+  - action: utter_tips_tricks 
+  - intent: tips_1
+  - action: utter_tip1
+ 
+- story: tips2
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: tips_and_tricks
+  - action: utter_tips_tricks 
+  - intent: tips_2
+  - action: utter_tips2
+
+- story: tips3
+  steps:
+  - intent: Travel
+  - action: utter_greet_travel
+  - action: utter_first_message
+  - intent: main_menu  
+  - action: utter_welcome_message
+  - intent: tips_and_tricks
+  - action: utter_tips_tricks 
+  - intent: tips_3
+  - action: utter_tips3
+
 
 
   

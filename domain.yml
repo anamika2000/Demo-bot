@@ -85,21 +85,123 @@ intents:
     use_entities: true
 - ship:
     use_entities: true
+- School:
+    use_entities: true
+- main_menu:
+    use_entities: true
+- plan_my_trip:
+    use_entities: true
+- activities_offered:
+    use_entities: true
+- more_info_zipline_tour:
+    use_entities: true
+- more_info_natural_exploration:
+    use_entities: true
+- more_info_subwing:
+    use_entities: true
+- tour_details_zipline:
+    use_entities: true
+- tour_details_natural_exploration:
+    use_entities: true
+- tour_details_subwing:
+    use_entities: true
+- add_to_mytrip:
+    use_entities: true
+- contact_us:
+    use_entities: true
+- testimonials:
+    use_entities: true
+- about_costa_rica:
+    use_entities: true
+- tips_and_tricks:
+    use_entities: true
+- tips_1:
+    use_entities: true
+- tips_2:
+    use_entities: true
+- tips_3:
+    use_entities: true
+- other_activities:
+    use_entities: true
+- Natural_Exploration:
+    use_entities: true
+- Zipline_Tour:
+    use_entities: true
+- Subwing_Costa_Rica:
+    use_entities: true
+- plane_my_trip:
+    use_entities: true
 entities:
-- city
 - name
 - number
 - email
 - standard
 slots:
   name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   number:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   email:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   standard:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  adults:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  budget:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  child:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  Email:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  phno:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  travel_date:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  travel_period:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  trip_type:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hey! How may i help you?
@@ -142,30 +244,37 @@ responses:
   utter_bill:
   - text: of couse,here it is .enjoy the rest of your evening
   utter_menu:
-  - text: 'our bots :'
-    buttons:
-    - title: 'Restaurent'
-      payload: '/Restaurent'
-    - title: 'Travel'
-      payload: '/Travel'
-  
-    - title: 'School'
-      payload: '/School'
-    - title: 'Book Store'
-      payload: '/BookStore'
+  - buttons:
+    - payload: /Restaurent
+      title: Restaurent
+    - payload: /Travel
+      title: Travel
+    - payload: /School
+      title: School
+    - payload: /BookStore
+      title: Book Store
+    text: 'our bots :'
   utter_noon:
-  - text: "Goodafter noon sir, How may i help you"
+  - text: Goodafter noon sir, How may i help you
   utter_standard:
-  - text: "which class is your son studying"
+  - text: which class is your son studying
   utter_admission:
-  - text: "ok so the admission date is next month. what about just apply so that we can give you the proper slot"
+  - text: ok so the admission date is next month. what about just apply so that we can give you the proper slot
   utter_fee:
-  - text: " The admission fees is 30,000.but before that the registration fees is just 500"
+  - text: ' The admission fees is 30,000.but before that the registration fees is just 500'
   utter_facilities:
-  - text: "Services :\nSports \nScouting \nPerforming Arts \nVisual Arts \nMusic \nAcademic clubs(Math, chess, Debates) \nStudent Media \n Affinity Groups"
+  - text: |-
+      Services :
+      Sports 
+      Scouting 
+      Performing Arts 
+      Visual Arts 
+      Music 
+      Academic clubs(Math, chess, Debates) 
+      Student Media 
+      Affinity Groups
   utter_register:
-  - text: "Plaese provide student details for registration"
-   
+  - text: Plaese provide student details for registration
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -188,7 +297,9 @@ responses:
   utter_nice_day:
   - text: Have a nice day
   utter_services:
-  - text: "Hello, welcome to Happy Travel Services \nHow may I help you"
+  - text: |-
+      Hello, welcome to Happy Travel Services 
+      How may I help you
   utter_address:
   - text: Please provide the source and the destination
   utter_source:
@@ -196,7 +307,7 @@ responses:
   utter_destination:
   - text: 'Destination : '
   utter_details:
-  - text: "Thanks for providing the details"
+  - text: Thanks for providing the details
   utter_happy:
   - text: Great, carry on!
   utter_goodbye:
@@ -206,13 +317,13 @@ responses:
   utter_name:
   - text: My name is Anamika
   utter_ask_name:
-  - text: "what is student's name"
+  - text: what is student's name
   utter_ask_number:
-  - text: "Number :"
+  - text: 'Number :'
   utter_ask_email:
-  - text: "Email :"
+  - text: 'Email :'
   utter_ask_standard:
-  - text: "Standard: "
+  - text: 'Standard: '
   utter_details_thanks:
   - text: |-
       Thanks for providing the given details 
@@ -221,24 +332,258 @@ responses:
       Email_Id: {Email} 
       Standard: {Standard}
       you have register succesfully, timeslot for admission will be notify soon.
+  utter_activities:
+  - buttons:
+    - payload: /Zipline_Tour
+      title: Zipline Tour
+    - payload: /Natural_Exploration
+      title: Natural Exploration
+    - payload: /Subwing_Costa_Rica
+      title: Subwing Costa Rica
+    text: |-
+      🚣 We offer a wide range of adventure and nature activities that will always take place in in private mode, using our own equipment and guides 
+      please choose an option to get started
+  utter_ask_adults:
+  - buttons:
+    - payload: 1-3
+      title: 1-3
+    - payload: 3-5
+      title: 3-5
+    - payload: 5+
+      title: 5+
+    text: 'How many adults are coming? '
+  utter_ask_budget:
+  - buttons:
+    - payload: Less than $2000
+      title: Less than $2000
+    - payload: $2000-$5000
+      title: $2000-$5000
+    - payload: More than $5000
+      title: More than $5000
+    text: What's an estimated budget per person(excluding airfare)?
+  utter_ask_child:
+  - buttons:
+    - payload: No
+      title: No
+    - payload: 1-3 children
+      title: 1-3 children
+    - payload: 3+ children
+      title: 3+ children
+    text: Are children traveling with you?
+  utter_ask_Email:
+  - text: What's your best email address, so we can send you details?
+  utter_ask_phno:
+  - text: What's your best phone number📲 to reach you at?
+  utter_ask_travel_date:
+  - text: 'When are you planning to travel? '
+  utter_ask_travel_period:
+  - buttons:
+    - payload: 5-10 days
+      title: 5-10 days
+    - payload: 10+ days
+      title: 10+ days
+    - payload: Not sure yet
+      title: Not sure yet
+    text: How long are you planning to travel?
+  utter_ask_trip_type:
+  - buttons:
+    - payload: Adventure - Adrenaline
+      title: Adventure - Adrenaline
+    - payload: Nature
+      title: Nature
+    - payload: Relaxation
+      title: Relaxation
+    text: What kind of trip are you looking for?
+  utter_first_message:
+  - buttons:
+    - payload: /main_menu
+      title: Let's see
+    text: I'm VIP concierge and i'wiil help you to make your Costa Rica vacation to be perfect ⭐⭐⭐⭐⭐ right after you click the button below
+  utter_greet_travel:
+  - text: |-
+      Hello Guest! 
+      Welcome to Costa Rica Adventure, where your comfrot, personal safety and total satisfaction is the highest priority
+  utter_natural_exploration:
+  - buttons:
+    - payload: /other_activities
+      title: Oher Activities
+    text: |-
+      Many  speceis of flora and fauna are unique to the park and found nowhere else on the earth 
+      upon arrival at the park,your guide will slowly walk in search of wildlife
+  utter_natural_tour_details:
+  - buttons:
+    - payload: /other_activities
+      title: Oher Activities
+    text: |-
+      🕛 Lenght of the tour: full day 
+      Minpeople: 4 
+      Includes: transprotation round trip,fruit snacks,experience guides,lunch,entrence ticket and water 
+      Recommendations: light cloth,bathing suit,sneakers 
+      💵:$ 120 per person
+  utter_plan_trip_one:
+  - text: 🙋 We look forward to assisting you with your travel planning needs
+  utter_subwing:
+  - buttons:
+    - payload: /other_activities
+      title: Oher Activities
+    text: 🏝️ Enjoy a full day adventure on the gorgeous Tortuga Island, We cater to groups of up to 8 people maximum
+  utter_subwing_tour_details:
+  - buttons:
+    - payload: /other_activities
+      title: Oher Activities
+    text: |-
+      🕛 Lenght of the tour: full day 
+      min.people: 2 
+      Includes: transprotation round trip,safety equipment,experience guides and insured vechicles 
+      Recommendations: swing suits,towel,sun screen and loads of energy 
+      💵:$ 125 per person 
+  utter_welcome_message:
+  - buttons:
+    - payload: /plan_my_trip
+      title: 📅Plan My Trip
+    - payload: /activities_offered
+      title: Activities Offered
+    - payload: /contact_us
+      title: 📞 Contact Us
+    - payload: /testimonials
+      title: ⭐ Testimoials
+    - payload: /about_costa_rica
+      title: 🌅 About Costa Rica
+    - payload: /tips_and_tricks
+      title: 👍 Tips And Tricks
+    text: |-
+      Ready to make your Costa Rica trip planning easy, make it worry-free and seamless?! 
+      Click <Plan My Trip> 
+  utter_zipline_tour:
+  - buttons:
+    - payload: /other_activities
+      title: Oher Activities
+    text: 🚀 Costa Rica Zipline tour begins with a 10-minute ride up the hill aboard our specially designed 40 passenger tracker. Once at the top of the moutain we will start to descend
+  utter_zipline_tour_details:
+  - buttons:
+    - payload: /other_activities
+      title: Oher Activities
+    text: |-
+      🕛 Lenght of the tour: 2 hours 
+      🌎 Location: 15 minute away from Jaco Beach 
+      Includes: transprotation round trip,safety equipment,experience guides and insured vechicles 
+      Recommendations: confortable clothing,sun glasses,camera and sun block 
+      💵:$ 70 per person 
+  utter_add_trip:
+  - text: Well done,trip is  added sucessfully
+  utter_contact:
+  - text: 🕐 our office is open monday-friday 8 am- 5 pm , local costa rica time
+  utter_testimonials:
+  - text: We are so exited to share with these testimonials from our clients👇
+  utter_about:
+  - text: From vast stretches of Caribbean and pacific coastline, wild rainforest and wide open savannas, to imposing mountains,lush river valleys and beguiling cloud forests...
+  utter_costa_rica:
+  - text: |-
+      ...Costa Rica is a country that is as appealing to families and honeymooners as it is to luxery travelers and adventure seekers 
+      Even though Costa Rica is 8 degree above the equator, Costa Rica is much more 'tempreture' than most North American locations
+  utter_tips_tricks:
+  - buttons:
+    - payload: /tips_1
+      title: Tips1
+    - payload: /tips_2
+      title: Tips2
+    - payload: /tips_3
+      title: Tips3
+    text: 🏝️ Even though Costa Rica is one of the most popular and visited countries in Central America, 💡there are a few things many things travelers aren't aware
+  utter_tip1:
+  - text: 🍛 Street food is the best food in Costa Rica, Costa Rican cuisine is delicious and some of the best eating spots are littile roadside local restaurents and 'sodas'
+  utter_tips2:
+  - text: 🍀🍀 Costa Rica is considered the 'greenest' country in the world and it ranked first in the Happy Planet Index
+  utter_tips3:
+  - text: |-
+      Costa Rica is very creative when its comes to driving. They usually pay no attention to traffic laws and drive like they are 'kings of the road'🚗 
+      If you rent a car, you should know there are few or no street signs in most part of the country, so getting around will be a bit of a challenge
+  utter_Zipline_Tour:
+  - buttons:
+    - payload: /more_info_zipline_tour
+      title: 📄 More Information
+    - payload: /tour_details_zipline
+      title: 🔍 Tour Details
+    - payload: /add_to_mytrip
+      title: ✔️ Add to my trip
+    image: http://teatownkerala.com/wp-content/uploads/2018/03/WNDZIPLINE3.png
+    text: |-
+      TITLE : Zipline Tour 
+      SUBTITLE: A canopy tour (sometimes called a zip-line tour) provides a route through a wooded and often mountainous landscape making primary use of zip-lines and aerial bridges between platforms built in trees.
+  utter_Natural_Exploration:
+  - buttons:
+    - payload: /more_info_natural_exploration
+      title: 📄 More Information
+    - payload: /tour_details_natural_exploration
+      title: 🔍 Tour Details
+    - payload: /add_to_mytrip
+      title: ✔️ Add to my trip
+    image: https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/07/6f/41/76.jpg
+    text: |-
+      TITLE : Natural Exploration 
+      SUBTITLE : A true paradise for those searching for jungles with feantastic beach
+  utter_Subwing_Costa_Rica:
+  - buttons:
+    - payload: /more_info_subwing
+      title: 📄 More Information
+    - payload: /tour_details_subwing
+      title: 🔍 Tour Details
+    - payload: /add_to_mytrip
+      title: ✔️ Add to my trip
+    image: https://media-cdn.tripadvisor.com/media/photo-s/0b/4f/cd/67/getlstd-property-photo.jpg
+    text: |-
+      TITLE : Subwing Costa Rica 
+      SUBTITLE : Enjoy doing the subwing our main feature
+  utter_Daniel:
+  - image: https://devilonwheels.com/wp-content/uploads/2016/01/Zanskar-Changthang-615-2.jpg
+    text: |-
+      TITLE : Daniel⭐⭐⭐⭐⭐ 
+      SUBTITLE : Great team,  safety was never an issue even with rainy tough condition
+  utter_Sophie:
+  - image: https://devilonwheels.com/wp-content/uploads/2016/01/Zanskar-Changthang-615-2.jpg
+    text: |-
+      TITLE : Sophie⭐⭐⭐⭐⭐ 
+      SUBTITLE : Appreciate your encouragement and patience at various times. never forget
+  utter_about_costa_rica_1:
+  - image: https://qtxasset.com/travelagentcentral/1533660220/manzanillocostaricagetty.jpg/manzanillocostaricagetty.jpg
+    text: "title : Widely recognized as the world's foremost"
+  utter_about_costa_rica_2:
+  - image: https://medicaltravelmarket.com/wp-content/uploads/2020/12/AdobeStock_189311748-780x405.jpeg
+    text: 'title : ecotourism destination Costa Rica is small'
+  utter_about_costa_rica_3:
+  - image: https://www.twofortheworld.com/wp-content/uploads/2017/06/Continental-Divide.jpg
+    text: 'title : but beautiful country with truly dramatic'
+  utter_Bioluminescent_Water:
+  - image: https://www.villascostarica.com//wp-content/uploads/2018/09/bioluminescent-beach.jpg
+    text: |-
+      TITLE : Bioluminescent Water 
+      SUBTITLE : On the entire planet there are five locations to see vibrant bioluminescent water, of those Costa Rica’s Bahia Beach is number one
+  utter_Go_paragliding:
+  - image: https://media-cdn.tripadvisor.com/media/photo-s/15/4f/d6/c3/take-off-from-cerro-escalares.jpg
+    text: |-
+      TITLE : Go paragliding 
+      SUBTITLE : Arguably one of the most beautiful places in the world to throw yourself off the side of a mountain to fly like a bird? We twisted and spin 2500ft over Dominical rainforest and beach eye to eye with hawks.
+  utter_Visit_rio_celeste:
+  - image: https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/80/12.jpg
+    text: |-
+      TITLE : Visit rio celeste 
+      SUBTITLE : Waterfalls, hot springs and the most delicious turquoise water you’ll ever lay your eyes on! The source of this river’s distinctive colour is not a due to chemicals or manipulation but to a physical phenomenon known as Mie scattering.
 actions:
-- action_city_state
 - action_submit
+- trip_plan_form
 forms:
+  trip_plan_form: {}
   user_details_form:
-    name:
-    - type: from_entity
-      entity: name
-    number:
-    - type: from_entity
-      entity: number
-      
     email:
-    - type: from_entity
-      entity: email
-      
+    - entity: email
+      type: from_entity
+    name:
+    - entity: name
+      type: from_entity
+    number:
+    - entity: number
+      type: from_entity
     standard:
-    - type: from_entity
-      entity: standard
-
+    - entity: standard
+      type: from_entity
 e2e_actions: []
